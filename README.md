@@ -13,4 +13,4 @@ alert(message);
 
 最後想問因為今天都在複習 接下來剩下8天 擔心上不完nodejs 跟 ajax
 **真心希望能夠多上一點小賴老師的課**
-(https://imgur.com/a/bQUdmqS.jpg "")
+![](https://imgur.com/a/bQUdmqS.jpg "我選weekend")
