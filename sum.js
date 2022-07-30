@@ -1,7 +1,11 @@
 function sum(n) {
-  for(i=1; i<n;i++){
-    n=i++
-    console.log(n)
+  let total=0;
+  for(i=1; i<=n;i++){
+    total+=i;
+    
   }
+  console.log(total)
 } 
-sum(1);
+sum(3);
+sum(5);
+sum(10);
