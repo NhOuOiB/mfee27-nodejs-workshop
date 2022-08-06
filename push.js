@@ -6,5 +6,6 @@ function push(n) {
     arr = arr + n;
     return arr;
 }
-// pushbtn(arr);
-console.log(push(arr))
+
+console.log(push())
+console.log(arr);
