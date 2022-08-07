@@ -1,11 +1,8 @@
-// 還沒寫完
-let arr = [1, 5, 671, 123, 57, 23];
-
-function push(n) {
-
-    arr = arr + n;
-    return arr;
-}
-
-console.log(push())
-console.log(arr);
+let arr = [1, 6, 3, 2, 57];
+push = (...num) => {
+  for (let i = 0; i < num.length; i++) {
+    arr[arr.length] = num[i];
+  }
+  console.log(arr);
+};
+push(1, 8, 45, 56);

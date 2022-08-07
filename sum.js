@@ -5,16 +5,16 @@ function sum(n) {
     }
     console.log(total);
 }
-// sum(3);
-// sum(5);
-// sum(10);
+sum(3);
+sum(5);
+sum(10);
 
-// function sum1(n) {
-//     return ((n + 1) * n) / 2;
-// }
-// sum1(3);
-// sum1(5);
-// sum1(10);
+function sum1(n) {
+    return ((n + 1) * n) / 2;
+}
+sum1(3);
+sum1(5);
+sum1(10);
 function sum3(n) {
   if (n === 1) {
     return n;
