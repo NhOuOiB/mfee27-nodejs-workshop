@@ -11,6 +11,6 @@ function concat(n) {
   console.log(arr);
 }
 
-concat([1, 26, 33, 67]);
+concat(arr1);
 // newArr=arr.concat(1,26,33,67);
 // console.log(newArr);

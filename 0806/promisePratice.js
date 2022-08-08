@@ -24,27 +24,28 @@ console.log(`"開始執行"${now}`);
 // 刷牙(3) => 吃早餐(5) => 寫功課(3)
 
 // 使用函式
-// doWork('走路', 3000)
-//   .then((msg) => {
-//     console.log(`"then" ${msg}`);
-//     return doWork("搭車", 7000)
-//   }).then((msg)=>{
-//     console.log(`"then" ${msg}`);
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   });
+doWork('走路', 3000)
+  .then((msg) => {
+    console.log(`"then" ${msg}`);
+    return doWork('搭車', 7000);
+  })
+  .then((msg) => {
+    console.log(`"then" ${msg}`);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 // 用then來接收成功資訊
 // 參數名稱隨意取，用來接收resolve傳出的內容
 // TODO:如果還有下一步再帶入函式
 // TODO:新的return要有新的then來接收成功資訊
 // TODO:catch接收失敗訊息;
-async function doasync() {
-  try {
-    console.log(await doWork('打祥恩', 5000));
-    console.log(await doWork('打崇淵', 3000));
-  } catch (err) {
-    console.log(err);
-  }
-}
-doasync();
+// async function doasync() {
+//   try {
+//     console.log(await doWork('打祥恩', 5000));
+//     console.log(await doWork('打崇淵', 3000));
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+// doasync();
