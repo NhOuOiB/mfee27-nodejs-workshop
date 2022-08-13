@@ -5,7 +5,7 @@ function read() {
       if (err) {
         return rejects(err);
       }
-      return resolve(msg);
+      resolve(msg);
     });
   });
 }

@@ -5,15 +5,22 @@ function read() {
       if (err) {
         return rejects(err);
       }
-      return resolve(msg);
+      resolve(msg);
     });
   });
 }
-async function result() {
+// async function result() {
+//   try {
+//     console.log(await read());
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
+// result();
+(async () => {
   try {
     console.log(await read());
   } catch (err) {
     console.error(err);
   }
-}
-result();
+})();
