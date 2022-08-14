@@ -64,10 +64,10 @@
               rejects((xhr.status));
             });
           });
+          xhr.onerror = function (event) {
+            rejects((responseDom.innerHTML = `XHR 非同步請求錯誤`));
+          };
         }
-        xhr.onerror = function (event) {
-          rejects((responseDom.innerHTML = `XHR 非同步請求錯誤`));
-        };
         (async () => {
           try {
             console.log(await load());
@@ -79,7 +79,7 @@
         })();
         // method, url, async (default: true)
         // GET, POST, UPDATE, DELETE, PUT, PATCH,...
-        xhr.open('GET', 'http://54.71.133.152:3000/error', true);
+        xhr.open('GET', 'http://54.71.133.152:3000', true);
         xhr.send();
       });
 

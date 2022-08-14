@@ -10,8 +10,5 @@
     "crawler"
   ],
   "author": "mike",
-  "license": "ISC",
-  "dependencies": {
-    "cowsay": "^1.5.0"
-  }
+  "license": "ISC"
 }
