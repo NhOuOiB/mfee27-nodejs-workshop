@@ -6,7 +6,6 @@ let queryDate = moment().format('YYYYMMDD');
 async function read() {
   try {
     // console.log(await promise);
-    console.log(stockName[1]);
 
     let stockNo = await fsPromises.readFile('stockNo.txt', 'utf8');
     let stockNoResponse = await axios.get('https://www.twse.com.tw/zh/api/codeQuery?', {
@@ -19,7 +18,7 @@ async function read() {
     if (stockSuggestion === '(無符合之代碼或名稱)') {
       throw Error('stockSuggestion');
     }
-    let stockName = stockSuggestion.split('\t');
+    let stockName = stockSuggestion.split('\t').pop();
     let response = await axios.get('https://www.twse.com.tw/exchangeReport/STOCK_DAY?', {
       params: {
         response: 'json',
@@ -28,6 +27,7 @@ async function read() {
       },
     });
     console.log(response.data);
+    console.log(stockName);
     // console.log(stockSuggestion);
     // console.log(response.data);
   } catch (err) {
