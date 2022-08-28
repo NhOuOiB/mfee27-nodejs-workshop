@@ -9,48 +9,17 @@ const port = process.env.SERVER_PORT || 3002;
 const cors = require('cors');
 app.use(cors());
 
+app.use(express.json());
+
 // const mysql = require('mysql2');
 // const { query } = require('express');
-let pool = require('./utils/db');
+// let pool = require('./utils/db');
 
-app.get('/ssr', (req, res, next) => {
-  // views/index.pug
-  res.render('index', {
-    stocks: ['台積電', '長榮航', '聯發科'],
-  });
-});
+let stockRouter = require('./routers/stocks');
+app.use('/api/stocks', stockRouter);
 
-app.get('/api/stocks', async (req, res, next) => {
-  let [data] = await pool.execute('SELECT * FROM stocks');
-  res.json(data);
-});
-<<<<<<< HEAD
-=======
-
-app.get('/api/stocks/:stockId', async (req, res, next) => {
-  const stockId = req.params.stockId;
-  // let [data] = await pool.execute('SELECT * FROM stock_prices WHERE stock_id=?', [stockId]);
-  // res.send(data);
-
-  let page = req.query.page || 1;
-  const perPage = 5;
-  let [total] = await pool.execute('SELECT COUNT(*) AS total FROM stock_prices WHERE stock_id=?', [stockId]);
-  total = total[0].total;
-  let lastPage = Math.ceil(total / perPage);
-  const offset = perPage * (page - 1);
-  let [data] = await pool.execute('SELECT * FROM stock_prices WHERE stock_id = ? ORDER BY date LIMIT ? OFFSET ?', [stockId, perPage, offset]);
-
-  res.json({
-    pagination: {
-      total,
-      perPage,
-      page,
-      lastPage,
-    },
-    data,
-  });
-});
->>>>>>> 3722772 ([feat]pagination)
+let authRouter = require('./routers/auth');
+app.use('/api', authRouter);
 
 app.get('/', (req, res, next) => {
   res.send('normal');

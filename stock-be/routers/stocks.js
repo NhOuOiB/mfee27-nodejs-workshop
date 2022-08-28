@@ -3,12 +3,12 @@ const router = express.Router();
 
 const pool = require('../utils/db');
 
-router.get('/api/stocks', async (req, res, next) => {
+router.get('/', async (req, res, next) => {
   let [data] = await pool.execute('SELECT * FROM stocks');
   res.json(data);
 });
 
-router.get('/api/stocks/:stockId', async (req, res, next) => {
+router.get('/:stockId', async (req, res, next) => {
   const stockId = req.params.stockId;
   // let [data] = await pool.execute('SELECT * FROM stock_prices WHERE stock_id=?', [stockId]);
   // res.send(data);
