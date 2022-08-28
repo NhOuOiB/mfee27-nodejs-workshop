@@ -1,19 +1,14 @@
-<<<<<<< HEAD
-import { useState } from 'react';
-
-const StockDetails = () => {
-  const [error, setError] = useState(null);
-
-=======
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { clearConfigCache } from 'prettier';
 
 const StockDetails = () => {
   const [error, setError] = useState(null);
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
+  const pages = [1, 2, 3];
   const { stockId } = useParams();
   useEffect(() => {
     let getDetail = async () => {
@@ -50,12 +45,7 @@ const StockDetails = () => {
     }
     return pages;
   };
-<<<<<<< HEAD
   
->>>>>>> 3722772 ([feat]pagination)
-=======
-
->>>>>>> fd45159 (add db.js stocks.js)
   return (
     <div>
       {error && <div>{error}</div>}

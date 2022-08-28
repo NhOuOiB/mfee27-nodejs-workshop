@@ -21,15 +21,6 @@ const Stock = () => {
     <div>
       {error && <div>{error}</div>}
       <h2 className="ml-7 mt-6 text-xl text-gray-600">股票代碼</h2>
-<<<<<<< HEAD
-
-      <div className="bg-white bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg m-6 cursor-pointer">
-        <Link to={`/stock/1234`}>
-          <h2 className="text-2xl font-bold mb-2 text-gray-800">1234</h2>
-          <p className="text-gray-700">1234名稱</p>
-        </Link>
-      </div>
-=======
       {data.map((stock) => {
         return (
           <div key={stock.id} className="bg-white bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg m-6 cursor-pointer">
@@ -40,7 +31,6 @@ const Stock = () => {
           </div>
         );
       })}
->>>>>>> 3722772 ([feat]pagination)
     </div>
   );
 };
