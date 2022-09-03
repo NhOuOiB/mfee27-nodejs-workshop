@@ -12,7 +12,7 @@ const StockDetails = () => {
   const { stockId } = useParams();
   useEffect(() => {
     let getDetail = async () => {
-      let response = await axios.get(`http://localhost:3001/api/stocks/${stockId}?page=${page}`);
+      let response = await axios.get(`http://localhost:3003/api/stocks/${stockId}?page=${page}`);
       setData(response.data.data);
       setLastPage(response.data.pagination.lastPage);
     };

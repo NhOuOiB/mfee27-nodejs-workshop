@@ -5,6 +5,7 @@ const pool = require('../utils/db');
 
 router.get('/', async (req, res, next) => {
   let [data] = await pool.execute('SELECT * FROM stocks');
+  // console.log(data);
   res.json(data);
 });
 

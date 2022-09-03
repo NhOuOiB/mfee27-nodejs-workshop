@@ -8,7 +8,7 @@ const Stock = () => {
 
   useEffect(() => {
     let getStock = async () => {
-      let response = await axios.get('http://localhost:3001/api/stocks');
+      let response = await axios.get('http://localhost:3003/api/stocks');
       // console.log(response.data);
 
       setData(response.data);

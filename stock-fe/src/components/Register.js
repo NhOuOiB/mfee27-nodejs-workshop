@@ -4,10 +4,10 @@ import axios from 'axios';
 
 const Register = () => {
   const [member, setMember] = useState({
-    email: '1',
-    name: '2',
-    password: '3',
-    confirmPassword: '4',
+    email: 'mike@stock.com',
+    name: 'mike',
+    password: 'test1234',
+    confirmPassword: 'test1234',
   });
   const change = (e) => {
     let newMember = { ...member };
