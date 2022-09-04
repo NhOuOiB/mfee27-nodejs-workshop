@@ -125,10 +125,10 @@ import { API_URL } from '../utils/config';
 
 const Register = () => {
   const [member, setMember] = useState({
-    email: 'ashleylai58@gmail.com',
-    name: 'ashley',
-    password: 'testtest',
-    confirmPassword: 'testtest',
+    email: 'mike@gmail.com',
+    name: 'mike',
+    password: 'test1234',
+    confirmPassword: 'test1234',
     photo: '',
   });
 

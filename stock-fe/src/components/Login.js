@@ -3,7 +3,7 @@ import axios from 'axios';
 import { API_URL } from '../utils/config';
 
 const Login = () => {
-  const [loginMember, setLoginMember] = useState({ email: 'ashleylai58@gmail.com', password: 'testtest' });
+  const [loginMember, setLoginMember] = useState({ email: 'mike@gmail.com', password: 'test1234' });
 
   function handleChange(e) {
     setLoginMember({ ...loginMember, [e.target.name]: e.target.value });
