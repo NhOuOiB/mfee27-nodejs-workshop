@@ -1,16 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
 const Stock = () => {
   const [error, setError] = useState(null);
   const [data, setData] = useState([]);
 
   useEffect(() => {
     let getStock = async () => {
-      let response = await axios.get('http://localhost:3003/api/stocks');
+      let response = await axios.get(`http://localhost:3003/api/stocks`);
       // console.log(response.data);
-
       setData(response.data);
     };
 
